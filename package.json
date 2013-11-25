@@ -1,0 +1,12 @@
+{
+	"name": "JoomlaDevDocs",
+	"version": "0.0.1",
+	"dependencies": {
+		"grunt": "~0.4.x",
+		"grunt-contrib": "~0.7.x",
+		"bower": "*"
+	},
+	"engines": {
+		"npm": "1.2.x"
+	}
+}

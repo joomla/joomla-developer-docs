@@ -1,0 +1,11 @@
+{
+	"name": "JoomlaDevDocs",
+	"version": "0.0.1",
+	"dependencies": {
+		"angular": "1.0.8",
+		"bootstrap": "2.3.1",
+		"angulartics" : "*"
+	},
+	"devDependencies": {
+	}
+}
