@@ -26,6 +26,8 @@ function DocController($scope, $routeParams, $http, $route, $location, $anchorSc
 
 	$http.get('docs/' + page).success(function (data) {
 		$scope.pageContent = data;
+    	/* point the edit to the original master, then you are prompted to fork if you don't have write access */
+	    $scope.sourceEdit = 'https://github.com/joomla/joomla-developer-docs/edit/master/docs/' + page;
 	});
 }
 
