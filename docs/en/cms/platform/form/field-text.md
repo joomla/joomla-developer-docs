@@ -1,12 +1,14 @@
 # Text Box Form Field
 
+<version_info>(Joomla &gt;= 1.6)<version_info>
+
 ## Description
 
 Displays an HTML text box.
 
-<form>
-    <input name="text_field" type="text" />
-</form>
+```html
+<input name="text_field" type="text" />
+```
 
 ## Attributes
 
@@ -19,6 +21,8 @@ When was this added?
 
 ## Examples
 
+### XML
+
 ```xml
 <field name="text_field" type="text"
     default="Some text"
@@ -28,5 +32,4 @@ When was this added?
 ## See Also
 
 * [Fields](#/en/cms/platform/form/fields.md)
-* JFormFieldText
-* JHtmlSelect::genericlist
+* [JFormFieldText](http://api.joomla.org/cms-3/classes/JFormFieldText.html)

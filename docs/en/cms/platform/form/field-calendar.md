@@ -1,5 +1,7 @@
 # Calendar Form Field
 
+<version_info>(Joomla &gt;= 1.6)<version_info>
+
 ## Description
 
 Displays a popup calendar.

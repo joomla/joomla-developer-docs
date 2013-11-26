@@ -1,5 +1,7 @@
 # Captcha Form Field
 
+<version_info>(Joomla &gt;= 2.5)<version_info>
+
 ## Description
 
 Displays Captcha field.
@@ -21,5 +23,5 @@ Supports `class`, `plugin`, `hidden`, `required` and `namespace` attributes.
 ## See Also
 
 * [Fields](#/en/cms/platform/form/fields.md)
-* JFormFieldCaptcha
-* JCaptcha
+* [JFormFieldCaptcha](http://api.joomla.org/cms-3/classes/JFormFieldCaptcha.html)
+* [JCaptcha](http://api.joomla.org/cms-3/classes/JCaptcha.html)

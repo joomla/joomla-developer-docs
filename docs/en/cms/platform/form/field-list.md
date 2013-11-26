@@ -1,16 +1,18 @@
 # List Form Field
 
+<version_info>(Joomla &gt;= 1.6)<version_info>
+
 ## Description
 
 Displays a select list.
 
-<form>
-    <select name="list_field" type="list">
-        <option value="a">A</option>
-        <option value="a">B</option>
-        <option value="a">C</option>
-    </select>
-</form>
+```html
+<select name="list_field">
+    <option value="a">A</option>
+    <option value="a">B</option>
+    <option value="a">C</option>
+</select>
+```
 
 ## Attributes
 
@@ -22,6 +24,8 @@ Option text is translatable. Option tags support `class`, `onclick`, `disabled` 
 The `requires` attribute can have a value of "multilanguage" or "associations" or both if separated by a comma (no spaces).
 
 ## Examples
+
+### XML
 
 ```xml
 <field name="list_field" type="list"
@@ -36,5 +40,5 @@ The `requires` attribute can have a value of "multilanguage" or "associations" o
 ## See Also
 
 * [Fields](#/en/cms/platform/form/fields.md)
-* JFormFieldList
-* JHtmlSelect::genericlist
+* [JFormFieldList](http://api.joomla.org/cms-3/classes/JFormFieldList.html)
+* [JHtmlSelect::genericlist](http://api.joomla.org/cms-3/classes/JHtmlSelect.html#method_genericlist)
