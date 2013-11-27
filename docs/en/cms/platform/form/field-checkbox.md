@@ -1,6 +1,6 @@
 # Checkbox Form Field
 
-<version_info>(Joomla &gt;= 1.6)<version_info>
+<versionInfo>(Joomla &gt;= 1.6)</versionInfo>
 
 ## Description
 
