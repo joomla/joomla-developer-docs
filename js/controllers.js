@@ -124,8 +124,10 @@ function MenuController($scope, $http, $route, $templateCache) {
 									menuTreeHTML += '</ul>';
 									if ($scope.treeJSONarray[key].depth == 2) {
 										lastFolder = $scope.treeJSONarray[key].path.split("/");
-										menuTreeHTML += '</ul>';
-										menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth-1].toUpperCase() + '<ul>';
+										if(lastFolder[1] != $scope.treeJSONarray[key-1].path.split("/")[1]) {
+											menuTreeHTML += '</ul>';
+											menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth-1].toUpperCase() + '<ul>';												
+										}
 										menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a>';
 										menuTreeHTML += '</li>';
 									}
