@@ -1,6 +1,6 @@
 # Color Form Field
 
-<version_info>(Joomla &gt;= 2.5)<version_info>
+<versionInfo>(Joomla &gt;= 2.5)</versionInfo>
 
 ## Description
 
