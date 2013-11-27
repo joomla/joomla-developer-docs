@@ -104,7 +104,6 @@ function MenuController($scope, $http, $route, $templateCache) {
 							}
 							else if(key == 2) {
 								lastFolder = $scope.treeJSONarray[key].path.split("/");
-								rootFolder = lastFolder[1];
 								menuTreeHTML += '<li>' + lastFolder[lastFolder.length-1].toUpperCase() + '</a><ul>';
 								menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
 							}
