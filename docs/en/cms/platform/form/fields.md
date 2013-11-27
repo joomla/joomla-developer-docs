@@ -5,6 +5,8 @@
 * [Calendar](#/en/cms/platform/form/field-calendar.md)
 * [Captcha](#/en/cms/platform/form/field-captcha.md)
 * [Checkbox](#/en/cms/platform/form/field-checkbox.md)
+* [Checkboxes](#/en/cms/platform/form/field-checkboxes.md)
+* [Color](#/en/cms/platform/form/field-color.md)
 * [List](#/en/cms/platform/form/field-list.md)
     * [Access Level](#/en/cms/platform/form/field-accesslevel.md)
     * [Cache Handler](#/en/cms/platform/form/field-cachehandler.md)
