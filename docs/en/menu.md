@@ -22,6 +22,7 @@
         * [JObject](#/en/cms/platform/object.md)
         * [JOpenstreetmap](#/en/cms/platform/openstreetmap.md)
         * [JProfiler](#/en/cms/platform/profiler.md)
+    - [Recipes](#/en/cms/recipes.md)
  - [Framework](#/en/framework/framework.md)
  	- Packages
 	 	* [DI](#/en/framework/packages/di.md)
