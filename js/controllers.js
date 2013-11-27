@@ -100,22 +100,22 @@ function MenuController($scope, $http, $route, $templateCache) {
 						angular.forEach($scope.treeJSONarray, function(value, key){
 							// insert home to the top of the tree
 							if(key == 1) {
-								menuTreeHTML = '<ul><li><a href="/#/en/home.md" title="Home">Home</a></li>';
+								menuTreeHTML = '<ul><li><a href="/joomla-developer-docs/#/en/home.md" title="Home">Home</a></li>';
 							}
 							else if(key == 2) {
 								lastFolder = $scope.treeJSONarray[key].path.split("/");
 								menuTreeHTML += '<li>' + lastFolder[lastFolder.length-1].toUpperCase() + '</a><ul>';
-								menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
+								menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
 							}
 							else {
 								if($scope.treeJSONarray[key].depth > lastDepth) {
 									lastFolder = $scope.treeJSONarray[key].path.split("/");
 									menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth-1].toUpperCase() + '</a><ul>';
-									menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
+									menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
 								}
 								if ($scope.treeJSONarray[key].depth == lastDepth){
 									lastFolder = $scope.treeJSONarray[key].path.split("/");
-									menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a>';
+									menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a>';
 									menuTreeHTML += '</li>';
 								}
 								else if ($scope.treeJSONarray[key].depth < lastDepth) {
@@ -124,7 +124,7 @@ function MenuController($scope, $http, $route, $templateCache) {
 										lastFolder = $scope.treeJSONarray[key].path.split("/");
 										menuTreeHTML += '</ul>';
 										menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth-1].toUpperCase() + '<ul>';
-										menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a>';
+										menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a>';
 										menuTreeHTML += '</li>';
 									}
 								}
