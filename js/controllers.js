@@ -1,31 +1,33 @@
 'use strict';
 
 /* Controllers */
-
 function DocController($scope, $routeParams, $http, $route, $location, $anchorScroll, $window) {
-  if ($routeParams.part1 == '') {
-    $routeParams.part1 = 'home.md';
-  }
+        if ($routeParams.lang == '' || typeof($routeParams.lang) == 'undefined') {
+                $routeParams.lang = 'en';
+        }
+        if (typeof($routeParams.part1) == 'undefined') {
+                $routeParams.part1 = 'home.md';
+        }
 
-  var page = $routeParams.part1;
+        var page = $routeParams.lang + '/' + $routeParams.part1;
 
-  if (typeof($routeParams.part2) != 'undefined') {
-    page += '/' + $routeParams.part2;
-  }
+        if (typeof($routeParams.part2) != 'undefined') {
+                page += '/' + $routeParams.part2;
+        }
 
-  if (typeof($routeParams.part3) != 'undefined') {
-    page += '/' + $routeParams.part3;
-  }
+        if (typeof($routeParams.part3) != 'undefined') {
+                page += '/' + $routeParams.part3;
+        }
 
-  if (typeof($routeParams.part4) != 'undefined') {
-    page += '/' + $routeParams.part4;
-  }
+        if (typeof($routeParams.part4) != 'undefined') {
+                page += '/' + $routeParams.part4;
+        }
 
-  $http.get('docs/' + page).success(function(data) {
-    $scope.pageContent = data;
-    /* point the edit to the original master, then you are prompted to fork if you don't have write access */
-    $scope.sourceEdit = 'https://github.com/eddieajau/joomla-developer-docs/edit/master/docs/' + page;
-  });
+        $http.get('docs/' + page).success(function (data) {
+                $scope.pageContent = data;
+            /* point the edit to the original master, then you are prompted to fork if you don't have write access */
+         $scope.sourceEdit = 'https://github.com/joomla/joomla-developer-docs/edit/master/docs/' + page;
+        });
 }
 /* // Original menu controller
 function MenuController($scope, $http, $route) {
