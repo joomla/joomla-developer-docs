@@ -1,5 +1,5 @@
  - [Home](#/en/home.md)
- - [CMS](#/en/cms/README.md)
+ - [CMS](#/en/cms/cms.md)
     - [Extensions](#/en/cms/extensions.md)
     - [Platform](#/en/cms/platform.md)
         * [JCrypt](#/en/cms/platform/crypt.md)
@@ -22,6 +22,6 @@
         * [JObject](#/en/cms/platform/object.md)
         * [JOpenstreetmap](#/en/cms/platform/openstreetmap.md)
         * [JProfiler](#/en/cms/platform/profiler.md)
- - [Framework](#/en/framework/README.md)
+ - [Framework](#/en/framework/framework.md)
  	- Packages
 	 	* [DI](#/en/framework/packages/di.md)
