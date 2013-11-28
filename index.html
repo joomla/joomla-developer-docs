@@ -27,7 +27,8 @@
 	<div id="main" class="container-fluid">
 		<div class="row-fluid">
 			<div class="span3 well" id="menu" ng-controller="MenuController">
-				<span ng-bind-html-unsafe="menu | marked"></span>
+				<!-- <span ng-bind-html-unsafe="menu | marked"></span> -->
+				<span ng-bind-html-unsafe="treeJSONarray"></span>
 			</div>
 			<div class="span9 ng-view" id="content">
 			</div>
