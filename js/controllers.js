@@ -65,6 +65,7 @@ function MenuController($scope, $http, $route, $templateCache) {
 			var markdownCMSFiles = /^docs\/.{2}\/cms\/.*?md$/;
 			var markdownFrameworkFiles = /^docs\/.{2}\/framework\/.*?md$/;
 			var separatePath = /(.*)[\/\\]([^\/\\]+\.\w+)$/;
+			var isOfficial = /^http\:\/\/developer\.docs\.joomla\.org/;
 			// Utility variables used throughout the function
 			var splitPath = "";
 			var lastPath = "";
@@ -75,6 +76,8 @@ function MenuController($scope, $http, $route, $templateCache) {
 			var lastFolder = "";
 			// Variable used to build the HTML tree
 			var menuTreeHTML = "";
+			// get the current url to see if we need to specify the repo name or not
+			var currentURL = window.location.href;
 			// foreach loop to get the sha of the latest commit for the tree
 			angular.forEach($scope.commit, function(value, key) {
 				if($scope.count > 0) return;
@@ -111,17 +114,32 @@ function MenuController($scope, $http, $route, $templateCache) {
 							else if(key == 2) {
 								lastFolder = $scope.treeJSONarray[key].path.split("/");
 								menuTreeHTML += '<li>' + lastFolder[lastFolder.length - 1].toUpperCase() + '</a><ul>';
-								menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
+								if(currentURL.match(isOfficial)) {
+									menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
+								}
+								else {
+									menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';											
+								}
 							}
 							else {
 								if($scope.treeJSONarray[key].depth > lastDepth) {
 									lastFolder = $scope.treeJSONarray[key].path.split("/");
 									menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth - 1].toUpperCase() + '</a><ul>';
-									menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
+									if(currentURL.match(isOfficial)) {
+										menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
+									}
+									else {
+										menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';											
+									}
 								}
 								if($scope.treeJSONarray[key].depth == lastDepth) {
 									lastFolder = $scope.treeJSONarray[key].path.split("/");
-									menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a>';
+									if(currentURL.match(isOfficial)) {
+										menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
+									}
+									else {
+										menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';											
+									}
 									menuTreeHTML += '</li>';
 								}
 								else if($scope.treeJSONarray[key].depth < lastDepth) {
@@ -132,7 +150,12 @@ function MenuController($scope, $http, $route, $templateCache) {
 											menuTreeHTML += '</ul>';
 											menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth - 1].toUpperCase() + '<ul>';
 										}
-										menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a>';
+										if(currentURL.match(isOfficial)) {
+											menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
+										}
+										else {
+											menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';											
+										}
 										menuTreeHTML += '</li>';
 									}
 								}
