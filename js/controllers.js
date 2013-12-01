@@ -109,7 +109,7 @@ function MenuController($scope, $http, $route, $templateCache) {
 						angular.forEach($scope.treeJSONarray, function(value, key) {
 							// insert home to the top of the tree
 							if(key == 1) {
-								menuTreeHTML = '<ul><li><a href="/#/en/home.md" title="Home">Home</a></li>';
+								menuTreeHTML = '<ul class="nav nav-list"><li><a href="/#/en/home.md" title="Home">Home</a></li>';
 							}
 							else if(key == 2) {
 								lastFolder = $scope.treeJSONarray[key].path.split("/");
