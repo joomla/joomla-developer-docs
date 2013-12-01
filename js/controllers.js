@@ -113,7 +113,7 @@ function MenuController($scope, $http, $route, $templateCache) {
 							}
 							else if(key == 2) {
 								lastFolder = $scope.treeJSONarray[key].path.split("/");
-								menuTreeHTML += '<li>' + lastFolder[lastFolder.length - 1].toUpperCase() + '</a><ul>';
+								menuTreeHTML += '<li><label class="tree-toggler">' + lastFolder[lastFolder.length-1].toUpperCase() + '</label><ul class="nav nav-list tree">';
 								if(currentURL.match(isOfficial)) {
 									menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
 								}
@@ -124,7 +124,7 @@ function MenuController($scope, $http, $route, $templateCache) {
 							else {
 								if($scope.treeJSONarray[key].depth > lastDepth) {
 									lastFolder = $scope.treeJSONarray[key].path.split("/");
-									menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth - 1].toUpperCase() + '</a><ul>';
+									menuTreeHTML += '<li><label class="tree-toggler">' + lastFolder[$scope.treeJSONarray[key].depth-1].toUpperCase() + '</label><ul class="nav nav-list tree">';
 									if(currentURL.match(isOfficial)) {
 										menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
 									}
@@ -148,7 +148,7 @@ function MenuController($scope, $http, $route, $templateCache) {
 										lastFolder = $scope.treeJSONarray[key].path.split("/");
 										if(lastFolder[1] != $scope.treeJSONarray[key - 1].path.split("/")[1]) {
 											menuTreeHTML += '</ul>';
-											menuTreeHTML += '<li>' + lastFolder[$scope.treeJSONarray[key].depth - 1].toUpperCase() + '<ul>';
+											menuTreeHTML += '<li><label class="tree-toggler">' + lastFolder[$scope.treeJSONarray[key].depth-1].toUpperCase() + '</label><ul class="nav nav-list tree">';
 										}
 										if(currentURL.match(isOfficial)) {
 											menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
