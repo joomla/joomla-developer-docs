@@ -46,3 +46,25 @@ th
 	border: 1px solid gray;
 	padding: 10px;
 }
+
+/* The following is for the collapse menu functions */
+ul.tree 
+{
+	display:none
+}
+
+label.tree-toggler:before
+{
+    content: "+";
+    padding-right: 5px;
+    color: green;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+label.tree-toggler.open:before 
+{
+    content: "-";
+    color: red;
+}
