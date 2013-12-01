@@ -51,9 +51,9 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			window.setTimeout(function(){
-				$('label.tree-toggler').click(function () {
-					$(this).parent().children('ul.tree').toggle(300);
-			        $(this).toggleClass('open');
+				jQuery('label.tree-toggler').click(function () {
+					jQuery(this).parent().children('ul.tree').toggle(300);
+			        jQuery(this).toggleClass('open');
 				});
 			}, 3000);
 		});
