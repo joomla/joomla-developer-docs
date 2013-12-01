@@ -50,6 +50,11 @@
 	<script src="js/marked.js"></script>
 	<script src="js/lib/angulartics.js"></script>
 	<script type="text/javascript">
+	/* The DOM reports the document as ready before Angular populates the menu.
+	 * Force the jQuery for the menu collapse functionality to wait 3 seconds
+	 * to make sure the elements are in place to be operated on.
+	 * 3 seconds is worst case time delay, and could be shortened with more testing / benchmarking
+	*/ 
 		jQuery(document).ready(function () {
 			window.setTimeout(function(){
 				jQuery('label.tree-toggler').click(function () {
