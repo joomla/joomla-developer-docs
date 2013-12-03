@@ -23,6 +23,6 @@
         * [JOpenstreetmap](#/en/cms/platform/openstreetmap.md)
         * [JProfiler](#/en/cms/platform/profiler.md)
     - [Recipes](#/en/cms/recipes.md)
- - [Framework](#/en/framework/framework.md)
+ - [Framework](#/en/Framework/Framework.md)
  	- Packages
-	 	* [DI](#/en/framework/packages/di.md)
+	 	* [DI](#/en/Framework/Packages/DI.md)

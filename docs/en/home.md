@@ -9,7 +9,7 @@ Documentation is a community responsibility!
 ## Main Sections
 
 * [Joomla CMS](#/en/cms/cms.md)
-* [Joomla Framework](#/en/framework/framework.md)
+* [Joomla Framework](#/en/Framework/Framework.md)
 
 ## Acknowledgements
 
