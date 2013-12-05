@@ -74,6 +74,7 @@ function MenuController($scope, $http, $route, $templateCache) {
 			var matchingPath = 0;
 			var lastDepth = 0;
 			var lastFolder = "";
+			var currentFolder = "";
 			// Variable used to build the HTML tree
 			var menuTreeHTML = "";
 			// get the current url to see if we need to specify the repo name or not
@@ -133,14 +134,22 @@ function MenuController($scope, $http, $route, $templateCache) {
 									}
 								}
 								if($scope.treeJSONarray[key].depth == lastDepth) {
-									lastFolder = $scope.treeJSONarray[key].path.split("/");
-									if(currentURL.match(isOfficial)) {
-										menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';										
-									}
-									else {
-										menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';											
-									}
-									menuTreeHTML += '</li>';
+										// check if the path is different to the previous path, indicating a new folder has been created
+										currentFolder = $scope.treeJSONarray[key].path.split("/");
+										if($scope.treeJSONarray[key].path != lastFolder.join("/") ) {
+											if( ( $scope.treeJSONarray[key].depth != "2" | $scope.treeJSONarray[key].depth != "1" ) && currentFolder[$scope.treeJSONarray[key].depth-1] != lastFolder[$scope.treeJSONarray[key].depth-1]) {
+												menuTreeHTML += '</ul>';
+												menuTreeHTML += '<li><label class="tree-toggler">' + currentFolder[$scope.treeJSONarray[key].depth-1].toUpperCase() + '</label><ul class="nav nav-list tree">';
+											}
+										}
+										if(currentURL.match(isOfficial)) {
+											menuTreeHTML += '<li><a href="/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';
+										}
+										else {
+											menuTreeHTML += '<li><a href="/joomla-developer-docs/#/' + $scope.treeJSONarray[key].path + '/' + $scope.treeJSONarray[key].name + '" title="' + $scope.treeJSONarray[key].name + '">' + $scope.treeJSONarray[key].name.replace(/\.md$/, "") + '</a></li>';											
+										}
+										menuTreeHTML += '</li>';
+										lastFolder = $scope.treeJSONarray[key].path.split("/");
 								}
 								else if($scope.treeJSONarray[key].depth < lastDepth) {
 									menuTreeHTML += '</ul>';
