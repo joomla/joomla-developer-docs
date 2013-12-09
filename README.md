@@ -6,10 +6,10 @@ This is an unofficial library of somewhat official looking developer documentati
 
 For information on how to contribute, see the [wiki](https://github.com/joomla/joomla-developer-docs/wiki).
 
-For the published version, see [http://joomla.github.io/joomla-developer-docs/](http://joomla.github.io/joomla-developer-docs/).
+For the published version, see [http://developer.docs.joomla.org/](http://developer.docs.joomla.org/).
 
 ## Table of Contents
 
-* [Joomla CMS](docs/en/cms/README.md)
-* [Joomla Framework](docs/en/framework/README.md)
+* [Joomla CMS](http://developer.docs.joomla.org/#/en/cms/cms.md)
+* [Joomla Framework](http://developer.docs.joomla.org/#/en/Framework/Framework.md)
 * Joomla Issue Tracker
