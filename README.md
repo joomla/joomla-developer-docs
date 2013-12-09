@@ -12,4 +12,4 @@ For the published version, see [http://developer.docs.joomla.org/](http://develo
 
 * [Joomla CMS](http://developer.docs.joomla.org/#/en/cms/cms.md)
 * [Joomla Framework](http://developer.docs.joomla.org/#/en/Framework/Framework.md)
-* Joomla Issue Tracker
+* [Joomla Issue Tracker](http://issues.joomla.org)
