@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" ng-app="JoomlaDevDocs">
+<head>
+	<meta charset="utf-8">
+	<title>The Official Joomla! Developer Documentation</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/app.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">The Official Joomla!<sup>&reg;</sup> Developer Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <noscript><h1 class="alert alert-error">Please activate JavaScript to see this content!</h1></noscript>
+
+	<div id="main" class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3 well" id="menu" ng-controller="MenuController">
+				<!-- <span ng-bind-html-unsafe="menu | marked"></span> -->
+				<span ng-bind-html-unsafe="treeJSONarray"></span>
+			</div>
+			<div class="span9 ng-view" id="content">
+			</div>
+		</div>
+	</div>
+
+	<!-- In production use:
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+	-->
+	<script src="js/lib/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/marked.js"></script>
+	<script src="js/lib/angulartics.js"></script>
+	<script src="js/lib/angulartics-google-analytics.js"></script>
+	<script type="text/javascript">
+	/* The DOM reports the document as ready before Angular populates the menu.
+	 * Force the jQuery for the menu collapse functionality to wait 3 seconds
+	 * to make sure the elements are in place to be operated on.
+	 * 3 seconds is worst case time delay, and could be shortened with more testing / benchmarking
+	*/
+		jQuery(document).ready(function () {
+			window.setTimeout(function(){
+				jQuery('label.tree-toggler').click(function () {
+					jQuery(this).parent().children('ul.tree').toggle(300);
+			        jQuery(this).toggleClass('open');
+				});
+			}, 3000);
+		});
+	</script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-544070-31', 'joomla.org');
+		/*ga('send', 'pageview');*/
+	</script>
+	</body>
+</html>
