@@ -5,6 +5,7 @@
 	<title>The Official Joomla! Developer Documentation</title>
 	<link rel="stylesheet" href="css/bootstrap.css"/>
 	<link rel="stylesheet" href="css/app.css"/>
+	<link rel="stylesheet" href="js/google-code-prettify/prettify.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<style type="text/css">
       body {
@@ -50,6 +51,7 @@
 	<script src="js/marked.js"></script>
 	<script src="js/lib/angulartics.js"></script>
 	<script src="js/lib/angulartics-google-analytics.js"></script>
+	<script src="js/google-code-prettify/prettify.js"></script>
 	<script type="text/javascript">
 	/* The DOM reports the document as ready before Angular populates the menu.
 	 * Force the jQuery for the menu collapse functionality to wait 3 seconds
@@ -63,6 +65,7 @@
 			        jQuery(this).toggleClass('open');
 				});
 			}, 3000);
+			jQuery('pre').addClass('prettyprint linenums');
 		});
 	</script>
 	<script>
