@@ -21,15 +21,15 @@ pre.prettyprint, code.prettyprint {
         -ms-border-radius: 8px;
         -khtml-border-radius: 8px;
         border-radius: 8px;
+        border: 1px solid darkslateblue;
 }
 
 pre.prettyprint {
-        width: 95%;
-        margin: 1em auto;
-        padding: 1em;
-        white-space: pre-wrap;
+	width: 95%;
+	margin: 0.5em auto;
+	padding: 1.5em;
+	white-space: pre-wrap;
 }
-
 
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
