@@ -2,25 +2,24 @@
 	<a class="btn btn-primary pull-right" ng-href="{{ sourceEdit }}">Edit page</a>
 	<span ng-bind-html-unsafe="pageContent | marked"></span>
 </div>
-	<script type="text/javascript">
-		jQuery(document).ready(function () {
-			window.setTimeout(function(){
-				jQuery('pre').addClass('prettyprint linenums');
-				jQuery.getScript( "js/google-code-prettify/prettify.js" )
-				  .done(function( script, textStatus ) {
-				    console.log( textStatus );
-				  })
-				  .fail(function( jqxhr, settings, exception ) {
-				    $( "div.log" ).text( "Triggered ajaxError handler." );
-				});
-				jQuery.getScript( "https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" )
-				  .done(function( script, textStatus ) {
-				    console.log( textStatus );
-				  })
-				  .fail(function( jqxhr, settings, exception ) {
-				    $( "div.log" ).text( "Triggered ajaxError handler." );
-				});
-			}, 100);
-   		});
-	</script>
-
+<script type="text/javascript">
+	jQuery(document).ready(function () {
+		window.setTimeout(function(){
+			jQuery('pre').addClass('prettyprint linenums');
+			jQuery.getScript( "js/google-code-prettify/prettify.js" )
+			  .done(function( script, textStatus ) {
+			    console.log( textStatus );
+			  })
+			  .fail(function( jqxhr, settings, exception ) {
+			    $( "div.log" ).text( "Triggered ajaxError handler." );
+			});
+			jQuery.getScript( "https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" )
+			  .done(function( script, textStatus ) {
+			    console.log( textStatus );
+			  })
+			  .fail(function( jqxhr, settings, exception ) {
+			    $( "div.log" ).text( "Triggered ajaxError handler." );
+			});
+		}, 100);
+	});
+</script>
