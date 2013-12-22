@@ -77,9 +77,9 @@
 				  .fail(function( jqxhr, settings, exception ) {
 				    $( "div.log" ).text( "Triggered ajaxError handler." );
 				});
+			}, 3000);
 				// reload page to force the prettify to run
 				location.reload();
-			}, 3000);
 		});
 	</script>
 	<script>
