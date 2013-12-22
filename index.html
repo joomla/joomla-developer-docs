@@ -78,8 +78,8 @@
 				    $( "div.log" ).text( "Triggered ajaxError handler." );
 				});
 			}, 3000);
-				// reload page to force the prettify to run
-				location.reload();
+				// reload page to force the prettify to run, and do it every 30mins to prevent constant reloads
+				setInterval(location.reload(), 180000);
 		});
 	</script>
 	<script>
