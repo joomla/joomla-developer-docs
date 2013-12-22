@@ -78,9 +78,12 @@
 				    $( "div.log" ).text( "Triggered ajaxError handler." );
 				});
 			}, 3000);
-				// reload page to force the prettify to run, and do it every 30mins to prevent constant reloads
-				setInterval(location.reload(), 180000);
-		});
+				// reload page once to force the prettify to run
+				if (window.location.href.toLowerCase().indexOf("loaded") < 0) {
+        			window.location = window.location.href + '?loaded=1';
+        			window.location.reload();
+   				}		
+   			});
 	</script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
