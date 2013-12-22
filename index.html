@@ -62,6 +62,21 @@
 					jQuery(this).parent().children('ul.tree').toggle(300);
 			        jQuery(this).toggleClass('open');
 				});
+				jQuery('pre').addClass('prettyprint linenums');
+				jQuery.getScript( "js/google-code-prettify/prettify.js" )
+				  .done(function( script, textStatus ) {
+				    console.log( textStatus );
+				  })
+				  .fail(function( jqxhr, settings, exception ) {
+				    $( "div.log" ).text( "Triggered ajaxError handler." );
+				});
+				jQuery.getScript( "https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" )
+				  .done(function( script, textStatus ) {
+				    console.log( textStatus );
+				  })
+				  .fail(function( jqxhr, settings, exception ) {
+				    $( "div.log" ).text( "Triggered ajaxError handler." );
+				});				
 			}, 3000);
 		});
 	</script>
@@ -74,5 +89,6 @@
 		ga('create', 'UA-544070-31', 'joomla.org');
 		/*ga('send', 'pageview');*/
 	</script>
+	<link rel="stylesheet" href="js/google-code-prettify/prettify.css"/>
 	</body>
 </html>
