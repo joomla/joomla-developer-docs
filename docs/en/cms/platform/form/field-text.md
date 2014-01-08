@@ -15,10 +15,6 @@ Displays an HTML text box.
 Supports `class`, `readonly`, `disabled`, `required`, `hint`, `size`, `maxlength`, `multiple`, `required`, `onchange`,
 `dirname`, `inputmode`, `pattern`, `filter`, `spellcheck`, `autocomplete` and `autofocus` attributes.
 
-Text fields also support suggestion in the form of `<option>` tags.
-Option text is translatable but limited to alnum, - and _.
-When was this added?
-
 ## Examples
 
 ### XML
@@ -29,7 +25,10 @@ When was this added?
     label="Text to save" size="10" />
 ```
 
-## Use Datalist
+## Use Suggestion Datalist
+
+Text fields also support suggestion in the form of `<option>` tags.
+Option text is translatable but limited to alnum, - and _.
 
 ```xml
 <field name="cars"
