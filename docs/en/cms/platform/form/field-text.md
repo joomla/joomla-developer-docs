@@ -41,7 +41,7 @@ Option text is translatable but limited to alnum, - and _.
 </field>
 ```
 
-The optput result:
+The output result:
 
 ```html
 <datalist id="cars_datalist">
