@@ -29,7 +29,32 @@ When was this added?
     label="Text to save" size="10" />
 ```
 
+## Use Datalist
+
+```xml
+<field name="cars"
+	type="text"
+	label="Cars"
+	>
+	<option value="benz" >Benz</option>
+	<option value="audi" >Audi</option>
+	<option value="BMW" />
+</field>
+```
+
+The optput result:
+
+```html
+<datalist id="cars_datalist">
+	<option value="benz">Benz</option>
+	<option value="audi">Audi</option>
+	<option value="BMW">BMW</option>
+</datalist>
+<input type="text" name="cars" id="cars" value="" list="cars_datalist"></div>
+```
+
 ## See Also
 
 * [Fields](#/en/cms/platform/form/fields.md)
 * [JFormFieldText](http://api.joomla.org/cms-3/classes/JFormFieldText.html)
+* [Html5 Datalist](http://www.w3schools.com/tags/tag_datalist.asp)
