@@ -80,7 +80,7 @@ if (!empty($this->rssDoc[0]))
 		}
 	}
 }
-```php
+```
 
 
 ## Namespacing Support
